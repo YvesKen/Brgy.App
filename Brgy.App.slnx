@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Brgy.App/Brgy.App.csproj" />
+  <Project Path="Brgy.Domain/Brgy.Domain.csproj" />
+  <Project Path="Brgy.Infrastructure/Brgy.Infrastructure.csproj" />
+  <Project Path="Brgy.Service/Brgy.Service.csproj" />
+</Solution>
