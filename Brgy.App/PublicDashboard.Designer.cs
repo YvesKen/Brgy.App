@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -80,6 +82,7 @@
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             lblSeniorCount = new Label();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
             label8 = new Label();
@@ -238,6 +241,7 @@
             tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(cardAdminTools);
             tabPage2.Controls.Add(panel1);
+            tabPage2.Controls.Add(guna2GradientPanel1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -383,7 +387,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Transparent;
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblTotalCount);
             panel1.Controls.Add(guna2CirclePictureBox6);
@@ -432,6 +436,7 @@
             // 
             // guna2CirclePictureBox6
             // 
+            guna2CirclePictureBox6.BackColor = Color.White;
             guna2CirclePictureBox6.Image = (Image)resources.GetObject("guna2CirclePictureBox6.Image");
             guna2CirclePictureBox6.ImageRotate = 0F;
             guna2CirclePictureBox6.Location = new Point(47, 82);
@@ -494,6 +499,7 @@
             // 
             // guna2CirclePictureBox5
             // 
+            guna2CirclePictureBox5.BackColor = Color.Transparent;
             guna2CirclePictureBox5.Image = (Image)resources.GetObject("guna2CirclePictureBox5.Image");
             guna2CirclePictureBox5.ImageRotate = 0F;
             guna2CirclePictureBox5.Location = new Point(931, 300);
@@ -506,6 +512,7 @@
             // 
             // guna2CirclePictureBox4
             // 
+            guna2CirclePictureBox4.BackColor = Color.Transparent;
             guna2CirclePictureBox4.Image = (Image)resources.GetObject("guna2CirclePictureBox4.Image");
             guna2CirclePictureBox4.ImageRotate = 0F;
             guna2CirclePictureBox4.Location = new Point(699, 367);
@@ -518,6 +525,7 @@
             // 
             // guna2CirclePictureBox3
             // 
+            guna2CirclePictureBox3.BackColor = Color.Transparent;
             guna2CirclePictureBox3.Image = (Image)resources.GetObject("guna2CirclePictureBox3.Image");
             guna2CirclePictureBox3.ImageRotate = 0F;
             guna2CirclePictureBox3.Location = new Point(343, 367);
@@ -530,6 +538,7 @@
             // 
             // guna2CirclePictureBox2
             // 
+            guna2CirclePictureBox2.BackColor = Color.Transparent;
             guna2CirclePictureBox2.Image = (Image)resources.GetObject("guna2CirclePictureBox2.Image");
             guna2CirclePictureBox2.ImageRotate = 0F;
             guna2CirclePictureBox2.Location = new Point(118, 300);
@@ -542,6 +551,7 @@
             // 
             // guna2CirclePictureBox1
             // 
+            guna2CirclePictureBox1.BackColor = Color.Transparent;
             guna2CirclePictureBox1.Image = (Image)resources.GetObject("guna2CirclePictureBox1.Image");
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(991, 73);
@@ -566,20 +576,27 @@
             // 
             // chart1
             // 
-            chart1.BackColor = Color.Blue;
-            chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chart1.BackgroundImageLayout = ImageLayout.Zoom;
-            chart1.BackImage = "C:\\Users\\USER\\Downloads\\white-gradient-blue-linear-3840x2160-c2-add8e6-ffffff-a-285-f-14.png";
+            chart1.BackColor = Color.Transparent;
+            chart1.BackgroundImageLayout = ImageLayout.None;
             chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
             chartArea1.BackColor = Color.White;
-            chartArea1.BackImage = "C:\\Users\\USER\\Downloads\\white-gradient-blue-linear-3840x2160-c2-add8e6-ffffff-a-285-f-14.png";
             chartArea1.BorderColor = Color.Transparent;
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(343, -6);
+            chart1.Location = new Point(344, 12);
             chart1.Name = "chart1";
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            chart1.PaletteCustomColors = new Color[]
+    {
+    Color.FromArgb(182, 227, 244),
+    Color.FromArgb(60, 168, 211),
+    Color.FromArgb(26, 101, 150),
+    Color.Empty
+    };
+            series1.BorderColor = Color.White;
+            series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
@@ -589,6 +606,21 @@
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
             chart1.Click += chart1_Click;
+            // 
+            // guna2GradientPanel1
+            // 
+            guna2GradientPanel1.BackColor = Color.White;
+            guna2GradientPanel1.BorderRadius = 25;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges7;
+            guna2GradientPanel1.FillColor = Color.FromArgb(166, 205, 226);
+            guna2GradientPanel1.FillColor2 = Color.FromArgb(240, 255, 255, 255);
+            guna2GradientPanel1.Location = new Point(0, 0);
+            guna2GradientPanel1.Name = "guna2GradientPanel1";
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2GradientPanel1.ShadowDecoration.Depth = 15;
+            guna2GradientPanel1.ShadowDecoration.Enabled = true;
+            guna2GradientPanel1.Size = new Size(1251, 527);
+            guna2GradientPanel1.TabIndex = 27;
             // 
             // tabPage3
             // 
@@ -682,7 +714,7 @@
             // cmbPosition
             // 
             cmbPosition.BackColor = Color.Transparent;
-            cmbPosition.CustomizableEdges = customizableEdges7;
+            cmbPosition.CustomizableEdges = customizableEdges9;
             cmbPosition.DrawMode = DrawMode.OwnerDrawFixed;
             cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPosition.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -693,7 +725,7 @@
             cmbPosition.Items.AddRange(new object[] { "Captain", "Councilor", "SK Chairman" });
             cmbPosition.Location = new Point(316, 544);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cmbPosition.ShadowDecoration.CustomizableEdges = customizableEdges10;
             cmbPosition.Size = new Size(140, 36);
             cmbPosition.TabIndex = 8;
             cmbPosition.SelectedIndexChanged += cmbPosition_SelectedIndexChanged;
@@ -742,7 +774,7 @@
             // 
             // txtLeaveReason
             // 
-            txtLeaveReason.CustomizableEdges = customizableEdges9;
+            txtLeaveReason.CustomizableEdges = customizableEdges11;
             txtLeaveReason.DefaultText = "";
             txtLeaveReason.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtLeaveReason.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -755,7 +787,7 @@
             txtLeaveReason.Name = "txtLeaveReason";
             txtLeaveReason.PlaceholderText = "Reason for Leave";
             txtLeaveReason.SelectedText = "";
-            txtLeaveReason.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtLeaveReason.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtLeaveReason.Size = new Size(140, 36);
             txtLeaveReason.TabIndex = 5;
             txtLeaveReason.TextChanged += txtLeaveReason_TextChanged;
@@ -763,7 +795,7 @@
             // cmbAttendance
             // 
             cmbAttendance.BackColor = Color.Transparent;
-            cmbAttendance.CustomizableEdges = customizableEdges11;
+            cmbAttendance.CustomizableEdges = customizableEdges13;
             cmbAttendance.DrawMode = DrawMode.OwnerDrawFixed;
             cmbAttendance.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAttendance.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -774,14 +806,14 @@
             cmbAttendance.Items.AddRange(new object[] { "Present", "Absent", "Leave" });
             cmbAttendance.Location = new Point(170, 544);
             cmbAttendance.Name = "cmbAttendance";
-            cmbAttendance.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            cmbAttendance.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cmbAttendance.Size = new Size(140, 36);
             cmbAttendance.TabIndex = 3;
             cmbAttendance.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
             // 
             // txtName
             // 
-            txtName.CustomizableEdges = customizableEdges13;
+            txtName.CustomizableEdges = customizableEdges15;
             txtName.DefaultText = "";
             txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -794,7 +826,7 @@
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Enter Official Name:";
             txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtName.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtName.Size = new Size(132, 27);
             txtName.TabIndex = 2;
             txtName.TextChanged += txtName_TextChanged;
@@ -869,11 +901,12 @@
             // 
             // btnLogout
             // 
-            btnLogout.BackColor = Color.MidnightBlue;
-            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
-            btnLogout.Location = new Point(1224, 35);
+            btnLogout.BackColor = Color.RoyalBlue;
+            btnLogout.BackgroundImage = (Image)resources.GetObject("btnLogout.BackgroundImage");
+            btnLogout.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogout.Location = new Point(1220, 25);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(33, 23);
+            btnLogout.Size = new Size(33, 36);
             btnLogout.TabIndex = 1;
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click_1;
@@ -945,26 +978,27 @@
         private MaterialSkin.Controls.MaterialButton btnRemoveOfficial;
         private MaterialSkin.Controls.MaterialButton btnAddOfficial;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPosition;
-        private Panel panel1;
-        private Label lblSeniorCount;
-        private Label lblMinorCount;
-        private Label lblAdultCount;
-        private Label lblTotalCount;
-        private Label lblFemaleCount;
-        private Label lblMaleCount;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private Label label2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
         private Label label8;
         private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Panel panel1;
+        private Label label2;
+        private Label lblTotalCount;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
+        private Label lblFemaleCount;
+        private Label lblMinorCount;
+        private Label lblAdultCount;
+        private Label lblMaleCount;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Label lblSeniorCount;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
