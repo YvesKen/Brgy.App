@@ -88,9 +88,9 @@
             tabPage3 = new TabPage();
             cmbDocs = new Guna.UI2.WinForms.Guna2ComboBox();
             panel2 = new Panel();
-            lblDocSteps = new Label();
             lblDocRequirements = new Label();
             lblDocInfo = new Label();
+            lblDocSteps = new Label();
             lblDocTitle = new Label();
             tabPage4 = new TabPage();
             label8 = new Label();
@@ -666,25 +666,14 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(lblDocSteps);
             panel2.Controls.Add(lblDocRequirements);
             panel2.Controls.Add(lblDocInfo);
+            panel2.Controls.Add(lblDocSteps);
             panel2.Controls.Add(lblDocTitle);
             panel2.Location = new Point(113, 47);
             panel2.Name = "panel2";
             panel2.Size = new Size(1109, 533);
             panel2.TabIndex = 1;
-            // 
-            // lblDocSteps
-            // 
-            lblDocSteps.AutoSize = true;
-            lblDocSteps.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDocSteps.ForeColor = Color.DodgerBlue;
-            lblDocSteps.Location = new Point(78, 267);
-            lblDocSteps.Name = "lblDocSteps";
-            lblDocSteps.Size = new Size(52, 25);
-            lblDocSteps.TabIndex = 3;
-            lblDocSteps.Text = "Info:";
             // 
             // lblDocRequirements
             // 
@@ -708,12 +697,23 @@
             lblDocInfo.TabIndex = 1;
             lblDocInfo.Text = "Info:";
             // 
+            // lblDocSteps
+            // 
+            lblDocSteps.AutoSize = true;
+            lblDocSteps.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDocSteps.ForeColor = Color.DodgerBlue;
+            lblDocSteps.Location = new Point(78, 267);
+            lblDocSteps.Name = "lblDocSteps";
+            lblDocSteps.Size = new Size(52, 25);
+            lblDocSteps.TabIndex = 3;
+            lblDocSteps.Text = "Info:";
+            // 
             // lblDocTitle
             // 
             lblDocTitle.AutoSize = true;
             lblDocTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDocTitle.ForeColor = Color.Navy;
-            lblDocTitle.Location = new Point(329, 46);
+            lblDocTitle.Location = new Point(296, 46);
             lblDocTitle.Name = "lblDocTitle";
             lblDocTitle.Size = new Size(86, 37);
             lblDocTitle.TabIndex = 0;

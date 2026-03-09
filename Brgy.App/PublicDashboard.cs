@@ -42,25 +42,67 @@ namespace Brgy.App
             LoadPopulationData();
             LoadAttendanceData();
             InitializeFAQTab(); // Added for the FAQ Tab logic
+            ApplyFAQStyles();
         }
 
         #region Smart FAQ Logic
+        private void ApplyFAQStyles()
+        {
+            // Color Definitions
+            Color navyBlue = Color.FromArgb(0, 0, 128);
+            Color dodgerBlue = Color.DodgerBlue;
 
+            // 1. Main Title
+            lblDocTitle.Font = new Font("Segoe UI", 20f, FontStyle.Bold);
+            lblDocTitle.ForeColor = navyBlue;
+            // If it's a MaterialLabel, we must disable the theme override
+            if (lblDocTitle is MaterialLabel mlTitle)
+            {
+                mlTitle.UseAccent = false;
+                mlTitle.HighEmphasis = false;
+            }
+
+            // 2. Section Headers (Navy Blue)
+            // Assuming these are the labels that display the actual words "USES AND IMPORTANCE", etc.
+            // If you hardcoded them into the content labels, I recommend separating them.
+            // Otherwise, we will style the content labels below.
+
+            // 3. Content Labels (Dodger Blue)
+            Label[] contentLabels = { lblDocInfo, lblDocRequirements, lblDocSteps };
+            Font contentFont = new Font("Segoe UI", 11f, FontStyle.Regular);
+
+            foreach (Label lbl in contentLabels)
+            {
+                lbl.Font = contentFont;
+                lbl.ForeColor = dodgerBlue;
+                lbl.BackColor = Color.Transparent;
+
+                // Disable MaterialSkin override if applicable
+                if (lbl is MaterialLabel ml)
+                {
+                    ml.UseAccent = false;
+                    ml.HighEmphasis = false;
+                }
+
+                // Keep your existing layout logic
+                lbl.MaximumSize = new Size(lbl == lblDocRequirements ? 350 : 650, 0);
+                lbl.AutoSize = true;
+                lbl.Padding = new Padding(0, 10, 0, 10);
+            }
+        }
         private void InitializeFAQTab()
         {
-            // Set up ComboBox Items
-            cmbDocs.Items.Clear();
             cmbDocs.Items.AddRange(new string[] {
-                "Barangay Clearance",
-                "Barangay Certificate (Residency)",
-                "Barangay Business Clearance",
-                "Barangay Indigency Certificate",
-                "Barangay Certificate for Solo Parent",
-                "Barangay Purok Clearance",
-                "Barangay Good Moral Certificate",
-                "Barangay Blotter Report",
-                "Barangay Permit for Events"
-            });
+        "📄 Barangay Clearance",
+        "🏠 Barangay Certificate (Residency)",
+        "🏢 Barangay Business Clearance",
+        "💰 Barangay Indigency Certificate",
+        "👩‍👧 Solo Parent Certificate",
+        "📍 Barangay Purok Clearance",
+        "⭐ Good Moral Certificate",
+        "🚨 Barangay Blotter Report",
+        "🎉 Barangay Permit for Events"
+        });
 
             // Default Text
             lblDocTitle.Text = "Select a Document";
@@ -79,76 +121,87 @@ namespace Brgy.App
 
             switch (selected)
             {
-                case "Barangay Clearance":
+                case "📄 Barangay Clearance":
                     UpdateFAQDisplay(
                         "Certifies that a person has no pending complaints or legal issues. Required for jobs, NBI, and business permits.",
                         "• Valid ID (Govt preferred)\n• Cedula / Tax Certificate\n• Barangay Form\n• Clearance Fee",
                         "1. Go to Barangay Hall.\n2. Fill out application form.\n3. Submit with Valid ID.\n4. Pay fee at cashier.\n5. Wait for Captain's signature.\n6. Claim document.");
                     break;
 
-                case "Barangay Certificate (Residency)":
+                case "🏠 Barangay Certificate (Residency)":
                     UpdateFAQDisplay(
                         "Certifies current residence in the barangay. Used for school, scholarships, and bank requirements.",
                         "• Valid ID\n• Proof of Residency\n• Request Form\n• Clearance Fee",
                         "1. Visit Hall.\n2. Request Residency form.\n3. Fill out details.\n4. Present ID and pay fee.\n5. Wait for Secretary's signature.\n6. Receive certificate.");
                     break;
 
-                case "Barangay Business Clearance":
+                case "🏢 Barangay Business Clearance":
                     UpdateFAQDisplay(
                         "Allows business operation within the barangay. Required for Mayor's Permit.",
                         "• Valid ID\n• DTI Registration\n• Lease Contract / Proof of location\n• Application Form",
                         "1. Request Business form.\n2. Fill out details.\n3. Submit requirements.\n4. Verification/Inspection.\n5. Pay fee.\n6. Claim Clearance.");
                     break;
 
-                case "Barangay Indigency Certificate":
+                case "💰 Barangay Indigency Certificate":
                     UpdateFAQDisplay(
                         "Certifies low-income status. Used for medical aid, hospital discounts, and financial assistance.",
                         "• Valid ID\n• Proof of Residency\n• Request Form",
                         "1. Visit Hall.\n2. Request Indigency form.\n3. Present ID.\n4. Possible brief interview.\n5. Wait for approval.\n6. Receive certificate.");
                     break;
 
-                case "Barangay Certificate for Solo Parent":
+                case "👩‍👧 Solo Parent Certificate":
                     UpdateFAQDisplay(
                         "Confirms solo parent status to apply for Solo Parent ID and benefits.",
                         "• Valid ID\n• Child's Birth Certificate\n• Proof of Status (Death cert/Separation papers)",
                         "1. Request Solo Parent Certification.\n2. Submit documents.\n3. Verification process.\n4. Captain signs.\n5. Claim document.");
                     break;
 
-                case "Barangay Purok Clearance":
+                case "📍 Barangay Purok Clearance":
                     UpdateFAQDisplay(
                         "Certifies recognition by the Purok Leader. Often required before Barangay Clearance.",
                         "• Valid ID\n• Request from Purok Leader\n• Small clearance fee",
                         "1. Go to Purok Leader.\n2. Provide personal info.\n3. Show ID and pay fee.\n4. Leader signs.\n5. Receive clearance.");
                     break;
 
-                case "Barangay Good Moral Certificate":
+                case "⭐ Good Moral Certificate":
                     UpdateFAQDisplay(
                         "Confirms good moral character. Used for employment, school, and scholarships.",
                         "• Valid ID\n• Request Form\n• Barangay Clearance (sometimes)",
                         "1. Visit Hall.\n2. Request Good Moral form.\n3. Fill out and submit ID.\n4. Pay processing fee.\n5. Wait for signature.");
                     break;
 
-                case "Barangay Blotter Report":
+                case "🚨 Barangay Blotter Report":
                     UpdateFAQDisplay(
                         "Official record of incidents or complaints. Used for police cases and legal documentation.",
                         "• Valid ID\n• Statement of Complaint\n• Names of involved persons",
                         "1. Report to Officer/Tanod.\n2. Provide incident details.\n3. Officer records in Logbook.\n4. Request official copy if needed.");
                     break;
 
-                case "Barangay Permit for Events":
+                case "🎉 Barangay Permit for Events":
                     UpdateFAQDisplay(
                         "Permit for parties, basketball leagues, or public programs.",
                         "• Valid ID\n• Letter Request\n• Event details (Date/Time/Location)",
                         "1. Submit letter to Hall.\n2. Provide details.\n3. Review by officials.\n4. Pay permit fee.\n5. Receive event permit.");
+                    break;
+
+                default:
+                    lblDocInfo.Text = "Information will appear here.";
+                    lblDocRequirements.Text = "";
+                    lblDocSteps.Text = "";
                     break;
             }
         }
 
         private void UpdateFAQDisplay(string info, string reqs, string steps)
         {
-            lblDocInfo.Text = "USES AND IMPORTANCE:\n" + info;
-            lblDocRequirements.Text = "REQUIREMENTS:\n" + reqs;
-            lblDocSteps.Text = "STEPS TO ACQUIRE:\n" + steps;
+            lblDocInfo.Text =
+    "ℹ USES AND IMPORTANCE\n\n" + info;
+
+            lblDocRequirements.Text =
+            "📋 REQUIREMENTS\n\n" + reqs;
+
+            lblDocSteps.Text =
+            "🪜 STEPS TO ACQUIRE\n\n" + steps;
         }
 
         #endregion
