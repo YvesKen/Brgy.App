@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -84,6 +86,12 @@
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             tabPage3 = new TabPage();
+            cmbDocs = new Guna.UI2.WinForms.Guna2ComboBox();
+            panel2 = new Panel();
+            lblDocSteps = new Label();
+            lblDocRequirements = new Label();
+            lblDocInfo = new Label();
+            lblDocTitle = new Label();
             tabPage4 = new TabPage();
             label8 = new Label();
             label7 = new Label();
@@ -115,6 +123,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            tabPage3.SuspendLayout();
+            panel2.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAttendance).BeginInit();
             SuspendLayout();
@@ -609,7 +619,7 @@
             // 
             // guna2GradientPanel1
             // 
-            guna2GradientPanel1.BackColor = Color.White;
+            guna2GradientPanel1.BackColor = Color.Transparent;
             guna2GradientPanel1.BorderRadius = 25;
             guna2GradientPanel1.CustomizableEdges = customizableEdges7;
             guna2GradientPanel1.FillColor = Color.FromArgb(166, 205, 226);
@@ -624,6 +634,8 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(cmbDocs);
+            tabPage3.Controls.Add(panel2);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -631,6 +643,81 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "SmartFAQs";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // cmbDocs
+            // 
+            cmbDocs.BackColor = Color.Transparent;
+            cmbDocs.CustomizableEdges = customizableEdges9;
+            cmbDocs.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbDocs.DropDownHeight = 200;
+            cmbDocs.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDocs.FocusedColor = Color.FromArgb(94, 148, 255);
+            cmbDocs.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cmbDocs.Font = new Font("Segoe UI", 10F);
+            cmbDocs.ForeColor = Color.FromArgb(68, 88, 112);
+            cmbDocs.IntegralHeight = false;
+            cmbDocs.ItemHeight = 30;
+            cmbDocs.Location = new Point(6, 47);
+            cmbDocs.Name = "cmbDocs";
+            cmbDocs.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cmbDocs.Size = new Size(199, 36);
+            cmbDocs.TabIndex = 0;
+            cmbDocs.SelectedIndexChanged += cmbDocs_SelectedIndexChanged;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblDocSteps);
+            panel2.Controls.Add(lblDocRequirements);
+            panel2.Controls.Add(lblDocInfo);
+            panel2.Controls.Add(lblDocTitle);
+            panel2.Location = new Point(113, 47);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1109, 533);
+            panel2.TabIndex = 1;
+            // 
+            // lblDocSteps
+            // 
+            lblDocSteps.AutoSize = true;
+            lblDocSteps.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDocSteps.ForeColor = Color.DodgerBlue;
+            lblDocSteps.Location = new Point(78, 267);
+            lblDocSteps.Name = "lblDocSteps";
+            lblDocSteps.Size = new Size(52, 25);
+            lblDocSteps.TabIndex = 3;
+            lblDocSteps.Text = "Info:";
+            // 
+            // lblDocRequirements
+            // 
+            lblDocRequirements.AutoSize = true;
+            lblDocRequirements.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDocRequirements.ForeColor = Color.DodgerBlue;
+            lblDocRequirements.Location = new Point(821, 123);
+            lblDocRequirements.Name = "lblDocRequirements";
+            lblDocRequirements.Size = new Size(52, 25);
+            lblDocRequirements.TabIndex = 2;
+            lblDocRequirements.Text = "Info:";
+            // 
+            // lblDocInfo
+            // 
+            lblDocInfo.AutoSize = true;
+            lblDocInfo.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDocInfo.ForeColor = Color.DodgerBlue;
+            lblDocInfo.Location = new Point(78, 123);
+            lblDocInfo.Name = "lblDocInfo";
+            lblDocInfo.Size = new Size(52, 25);
+            lblDocInfo.TabIndex = 1;
+            lblDocInfo.Text = "Info:";
+            // 
+            // lblDocTitle
+            // 
+            lblDocTitle.AutoSize = true;
+            lblDocTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDocTitle.ForeColor = Color.Navy;
+            lblDocTitle.Location = new Point(329, 46);
+            lblDocTitle.Name = "lblDocTitle";
+            lblDocTitle.Size = new Size(86, 37);
+            lblDocTitle.TabIndex = 0;
+            lblDocTitle.Text = "TITLE";
             // 
             // tabPage4
             // 
@@ -714,7 +801,7 @@
             // cmbPosition
             // 
             cmbPosition.BackColor = Color.Transparent;
-            cmbPosition.CustomizableEdges = customizableEdges9;
+            cmbPosition.CustomizableEdges = customizableEdges11;
             cmbPosition.DrawMode = DrawMode.OwnerDrawFixed;
             cmbPosition.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPosition.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -725,7 +812,7 @@
             cmbPosition.Items.AddRange(new object[] { "Captain", "Councilor", "SK Chairman" });
             cmbPosition.Location = new Point(316, 544);
             cmbPosition.Name = "cmbPosition";
-            cmbPosition.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            cmbPosition.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cmbPosition.Size = new Size(140, 36);
             cmbPosition.TabIndex = 8;
             cmbPosition.SelectedIndexChanged += cmbPosition_SelectedIndexChanged;
@@ -774,7 +861,7 @@
             // 
             // txtLeaveReason
             // 
-            txtLeaveReason.CustomizableEdges = customizableEdges11;
+            txtLeaveReason.CustomizableEdges = customizableEdges13;
             txtLeaveReason.DefaultText = "";
             txtLeaveReason.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtLeaveReason.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -787,7 +874,7 @@
             txtLeaveReason.Name = "txtLeaveReason";
             txtLeaveReason.PlaceholderText = "Reason for Leave";
             txtLeaveReason.SelectedText = "";
-            txtLeaveReason.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtLeaveReason.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtLeaveReason.Size = new Size(140, 36);
             txtLeaveReason.TabIndex = 5;
             txtLeaveReason.TextChanged += txtLeaveReason_TextChanged;
@@ -795,7 +882,7 @@
             // cmbAttendance
             // 
             cmbAttendance.BackColor = Color.Transparent;
-            cmbAttendance.CustomizableEdges = customizableEdges13;
+            cmbAttendance.CustomizableEdges = customizableEdges15;
             cmbAttendance.DrawMode = DrawMode.OwnerDrawFixed;
             cmbAttendance.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAttendance.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -806,14 +893,14 @@
             cmbAttendance.Items.AddRange(new object[] { "Present", "Absent", "Leave" });
             cmbAttendance.Location = new Point(170, 544);
             cmbAttendance.Name = "cmbAttendance";
-            cmbAttendance.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            cmbAttendance.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cmbAttendance.Size = new Size(140, 36);
             cmbAttendance.TabIndex = 3;
             cmbAttendance.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
             // 
             // txtName
             // 
-            txtName.CustomizableEdges = customizableEdges15;
+            txtName.CustomizableEdges = customizableEdges17;
             txtName.DefaultText = "";
             txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -826,7 +913,7 @@
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Enter Official Name:";
             txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtName.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtName.Size = new Size(132, 27);
             txtName.TabIndex = 2;
             txtName.TextChanged += txtName_TextChanged;
@@ -942,6 +1029,9 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            tabPage3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAttendance).EndInit();
@@ -1000,5 +1090,11 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Label lblSeniorCount;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Panel panel2;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbDocs;
+        private Label lblDocTitle;
+        private Label lblDocSteps;
+        private Label lblDocRequirements;
+        private Label lblDocInfo;
     }
 }
